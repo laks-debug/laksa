@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal Wedding - Lakshit & Saloni</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#d4af37;--muted-gold:#c9a562;--dark:#0b0b0f;--card:#14141a;--text-light:#eaeaea}
 *{box-sizing:border-box}
@@ -30,41 +30,26 @@ h1,h2,h3{font-family:'Cinzel',serif;color:var(--gold)}
 
 /* Side milestone boxes */
 .milestone-box{
-  width:150px;
-  flex-shrink:0;
-  background:var(--card);
-  border:2px solid rgba(212,175,55,0.45);
-  border-radius:20px;
-  padding:28px 18px;
-  text-align:center;
+  width:150px;flex-shrink:0;background:var(--card);
+  border:2px solid rgba(212,175,55,0.45);border-radius:20px;
+  padding:28px 18px;text-align:center;
   box-shadow:0 0 30px rgba(212,175,55,0.1),0 8px 24px rgba(0,0,0,0.6);
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-  backdrop-filter:blur(4px);
+  position:relative;overflow:hidden;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:4px;backdrop-filter:blur(4px);
 }
 .milestone-box::before{
   content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse at 50% 0%,rgba(212,175,55,0.1) 0%,transparent 65%);
   pointer-events:none;
 }
-/* Decorative corner lines */
 .milestone-box::after{
-  content:'';position:absolute;
-  top:8px;left:8px;right:8px;bottom:8px;
-  border-radius:14px;
-  border:1px solid rgba(212,175,55,0.12);
-  pointer-events:none;
+  content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;
+  border-radius:14px;border:1px solid rgba(212,175,55,0.12);pointer-events:none;
 }
 .m-icon{font-size:26px;line-height:1;margin-bottom:4px;filter:drop-shadow(0 0 8px rgba(212,175,55,0.5))}
 .m-num{font-family:'Cinzel',serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;text-shadow:0 0 20px rgba(212,175,55,0.5);margin:4px 0}
 .m-unit{font-size:11px;color:var(--muted-gold);font-weight:600;text-transform:uppercase;letter-spacing:2px}
 .m-sub{font-size:10px;opacity:0.45;font-style:italic;margin-top:4px;line-height:1.3}
-/* Thin gold side-line accent */
 .milestone-box-left{border-right:none;border-radius:20px 0 0 20px;border-right:1px solid rgba(212,175,55,0.15)}
 .milestone-box-right{border-left:none;border-radius:0 20px 20px 0;border-left:1px solid rgba(212,175,55,0.15)}
 
@@ -96,6 +81,23 @@ h1,h2,h3{font-family:'Cinzel',serif;color:var(--gold)}
 /* ── ALBUM ── */
 .album-icon{font-size:60px;margin-bottom:15px;filter:drop-shadow(0 0 15px rgba(212,175,55,0.5))}
 .album-desc{color:var(--text-light);opacity:0.75;font-size:14px;margin-bottom:20px;line-height:1.6}
+
+/* ── LOVE LETTER CARD ── */
+.ll-label{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;opacity:0.7;margin-bottom:8px}
+.ll-dots{font-size:16px;letter-spacing:6px;opacity:0.4;margin-bottom:18px}
+.ll-script{font-family:'Dancing Script',cursive;font-size:32px;color:var(--gold);margin-bottom:6px;text-shadow:0 0 18px rgba(212,175,55,0.3);line-height:1.2}
+.ll-italic{font-style:italic;color:var(--muted-gold);font-size:13px;margin:0 0 16px;opacity:0.75}
+.ll-divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,#d4af37,transparent);margin:0 auto 18px}
+.ll-preview{font-style:italic;opacity:0.6;font-size:14px;max-width:400px;line-height:1.7;margin-bottom:24px}
+
+/* ── FLIP ALBUM CARD ── */
+.flip-pages{display:flex;justify-content:center;gap:-6px;margin-bottom:16px;position:relative}
+.flip-page{width:44px;height:60px;border-radius:3px 8px 8px 3px;border:1.5px solid rgba(212,175,55,0.4);position:relative}
+.flip-page:nth-child(1){background:linear-gradient(135deg,#1e1a10,#2a220e);transform:rotate(-6deg) translateX(6px);z-index:1}
+.flip-page:nth-child(2){background:linear-gradient(135deg,#231f12,#302812);transform:rotate(-2deg) translateX(2px);z-index:2}
+.flip-page:nth-child(3){background:linear-gradient(135deg,#28220f,#3a2e10);transform:rotate(2deg) translateX(-2px);z-index:3;border:1.5px solid rgba(212,175,55,0.65)}
+.flip-spine{position:absolute;left:0;top:0;width:8px;height:100%;background:rgba(212,175,55,0.25);border-radius:3px 0 0 3px}
+.flip-star{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:14px;opacity:0.6}
 
 /* ── MAP MODAL ── */
 #mapModal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:1000}
@@ -160,7 +162,7 @@ h1,h2,h3{font-family:'Cinzel',serif;color:var(--gold)}
   <div class="card">
     <h2>Invitation</h2>
     <div class="invite-text">Lakshit & Saloni Invitation Card</div>
-    <a href="https://drive.google.com/file/d/18bFepejgeDzpUQ5y-YIV7Kt4VaiR3pNy/view?usp=drive_link" target="_blank" class="btn-solid">Download Card</a>
+    <a href="https://drive.google.com/file/d/18YmdcqnZpzbZLK3Ets_4J2O04zLbe9O9/view?usp=sharing" target="_blank" class="btn-solid">Download Card</a>
   </div>
   <div class="card">
     <h2>Event Details</h2>
@@ -186,8 +188,44 @@ h1,h2,h3{font-family:'Cinzel',serif;color:var(--gold)}
     <div class="album-icon">💌</div>
     <h2 style="margin-bottom:8px">Invitation Card</h2>
     <p class="album-desc">View our digital invitation card in full detail. Download it to share with family and friends.</p>
-    <a href="https://drive.google.com/file/d/18bFepejgeDzpUQ5y-YIV7Kt4VaiR3pNy/view?usp=drive_link" target="_blank" class="btn-outline">View Invitation</a>
+    <a href="https://drive.google.com/file/d/1DN_qkSzZPLETo0nN_XE4uBHdXqm5xsBo/view?usp=sharing" target="_blank" class="btn-outline">View Invitation</a>
   </div>
+</div>
+
+<!-- ══ FLIP ALBUM + LOVE LETTER (side by side) ══ -->
+<div class="grid" style="margin-top:30px;">
+
+  <!-- FLIP ALBUM -->
+  <div class="card">
+    <div class="ll-label">Interactive</div>
+    <div class="ll-dots">✦ ✦ ✦</div>
+    <!-- Animated flip pages icon -->
+    <div class="flip-pages">
+      <div class="flip-page"><div class="flip-spine"></div></div>
+      <div class="flip-page"><div class="flip-spine"></div></div>
+      <div class="flip-page"><div class="flip-spine"></div><div class="flip-star">★</div></div>
+    </div>
+    <h2 style="margin-bottom:8px;margin-top:12px">Flip Album</h2>
+    <p class="album-desc" style="max-width:280px">Relive our wedding story page by page — a beautiful interactive flip-book of our most cherished moments.</p>
+    <a href="https://flipix.in/v1/?m=QUtTSElUV0VEU1NBTE9OSV82OTYwYjgwMjMyMGYz" target="_blank" class="btn-solid" style="display:inline-flex;align-items:center;gap:8px">
+      <span>📄</span> Open Flip Album
+    </a>
+  </div>
+
+  <!-- LOVE LETTER -->
+  <div class="card">
+    <div class="ll-label">A Letter Written With Love</div>
+    <div class="ll-dots">✦ ✦ ✦</div>
+    <div class="album-icon" style="font-size:52px;margin-bottom:10px">💌</div>
+    <div class="ll-script">My Dearest Saloni</div>
+    <p class="ll-italic">An open letter from Lakshit's heart</p>
+    <div class="ll-divider"></div>
+    <p class="ll-preview">"There are words I carry close that never found their way to voice — written now, for you, forever…"</p>
+    <a href="https://lakshitsmartlife.blogspot.com/2026/05/my-dearest-saloni-with-love-open-letter.html" target="_blank" class="btn-outline" style="display:inline-flex;align-items:center;gap:8px">
+      <span>💬</span> Read the Love Letter
+    </a>
+  </div>
+
 </div>
 
 <!-- ══ VIDEO ══ -->
@@ -232,7 +270,6 @@ function updateTime(){
     return;
   }
 
-  /* Days / Hours / Min / Sec */
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000)  / 60000);
@@ -243,7 +280,6 @@ function updateTime(){
      <div class="box"><span class="num">${m}</span><span class="lbl">Minutes</span></div>
      <div class="box"><span class="num">${s}</span><span class="lbl">Seconds</span></div>`;
 
-  /* Months passed (calendar-accurate) */
   const wDate  = new Date(WEDDING);
   const nDate  = new Date(now);
   let months = (nDate.getFullYear() - wDate.getFullYear()) * 12
@@ -251,7 +287,6 @@ function updateTime(){
   if(nDate.getDate() < wDate.getDate()) months--;
   monthsEl.textContent = Math.max(0, months);
 
-  /* Years passed */
   const years = diff / (365.25 * 86400000);
   yearsEl.textContent = years >= 1 ? Math.floor(years) : years.toFixed(1);
 }
